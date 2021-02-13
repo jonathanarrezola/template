@@ -1,0 +1,80 @@
+/* PArametric mixin for headings */
+
+.headingStyle(@paramColor: #FF0000; @paramSize: 2em) {
+    color: @paramColor; // this acceps a font colorpassed through as an argument
+    font-size: @paramSize; // this accepts a font size passed through as an argument
+    font-weight: bold; // this is static code... not everything has to be dynamic!
+    line-height: @paramSize; // this reuses the same font size as before to change line height
+    margin-top: @paramSize / 2; // this resuses @paramSize and uses /2 to return half the value for top margin 
+    margin-bottom: @paramSize / 2; // this resuses @paramSize and uses /2 to return half the value for bottom margin
+    text-transform: uppercase; // this makes my text uppercase
+}
+
+.fontStyle(@paramFamily: "open sans", sans-serif; @paramSize: 16px) {
+    font-family: @paramFamily; // this accepts a font type passed as an argument
+    font-size: @paramSize; // this accepts a font size passed as an argument
+}
+
+.roundedCornersAndBgColor(@paramRadius: 3px; @paramColor: #C0C0C0) {
+    -moz-border-radius: @paramRadius;  
+    -webkit-border-radius: @paramRadius;
+    border-radius: @paramRadius;
+    background-color: @paramColor; // this changes the background color
+}
+
+.drop-shadow (@x: 0; @y: 1px; @blur: 2px; @color: #DCDCDC) {
+	-webkit-box-shadow:	@x @y @blur 0 @color;
+	-moz-box-shadow: @x @y @blur 0 @color;
+	box-shadow: @x @y @blur 0 @color; // This mixin produces a drop shadow for my nav buttons
+}
+
+.gradientBackground (@direction: left; @firstColor: #CCC; @secondColor: #AAA) {
+    height: 200px; // This mixin adds a gradient to my footer
+    background-color: red;
+    background-image: linear-gradient(to @direction, @firstColor, @secondColor) //
+}
+/* End parametric mixin for headings */
+// out: null
+// This mixin makes elements 10% larger
+.expand() {
+    transform: scale(1.1);
+    display: inline-block;
+}
+// This mixin makes elements 50% transparent
+.transparent() {
+    opacity: 0.5;
+}
+// This mixin makes elements underlined and italicized
+.italicized() {
+    text-decoration: underline;
+    font-style: italic;
+}
+// This mixin makes elements uppercase and bold 
+.bold() {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+// This mixin makes images flip
+.image {
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
+// This mixin makes elements center and adds a blac border
+.center {
+    margin: auto;
+    width: 60%;
+    border: 3px solid #000000;
+    padding: 10px;
+}
+// This mixin makes elements red
+.red {
+    color:#FF0000;
+}
+// This mixin adds a border
+.border {
+    border: 3px solid #000000;
+}
+// This mixin makes underlines
+.underline {
+    text-decoration: underline;
+}
